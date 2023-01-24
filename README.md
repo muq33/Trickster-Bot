@@ -1,5 +1,5 @@
 
-# SESt-App
+# Trickster Bot
 
 An bot oriented to automate the gameplay of Trickster Online
 
