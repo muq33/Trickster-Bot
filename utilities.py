@@ -1,29 +1,3 @@
-from pymem import *
-from pymem.process import *
-from sys import exit
-from memory_manage import getPointerAddr
-from win32gui import GetWindowText, GetForegroundWindow, FindWindow, GetWindowRect
-from utilities import *
-import pygetwindow as gw
-import subprocess
-import pyautogui as py
-import time
-import math
-import pygetwindow as gw
-
-#import keyboard
-
-
-
-mem = Pymem('Trickster.bin')
-module = module_from_name(mem.process_handle, 'Trickster.bin').lpBaseOfDll
-offsetsx = [0x3B8, 0xF8, 0x258,0x678]
-offsetsy = [0x3F0, 0x470, 0x1EC, 0x110, 0x67C]
-offsetsmana = [0x78, 0x6E4, 0x1B4, 0xB8, 0x1DC]
-
-PosX = mem.read_float(getPointerAddr(mem,module + 0x009B0250, offsetsx))
-PosY = mem.read_float(getPointerAddr(mem,module + 0x009B0250, offsetsy))
-# Mana = mem.read_int(getPointerAddr(mem,module + 0x009B7484, offsetsmana))
 def verify_window(process_name):
     call = 'TASKLIST', '/FI', 'imagename eq %s' % process_name
     output = subprocess.check_output(call).decode()
@@ -90,18 +64,3 @@ def activate_window(name,args:bool):
         win_name = [title for title in win_titles if name in title]
         win = gw.getWindowsWithTitle(win_name[0])[0]
         win.activate()
-
-def bot():
-    if(verify_window('Trickster.bin') == True):
-        if('LifeTO' in GetWindowText(GetForegroundWindow())):
-            #print(get_window_sizepos(activate_window('LifeTO',True)))
-        else:
-            activate_window('LifeTO', False)
-            bot()
-    else:
-        print('Jogo não encontrado. Finalizando aplicação')
-        exit()
-#bot()
-time.sleep(2)
-walk((PosX, PosY), (PosX+200,PosY))
-
