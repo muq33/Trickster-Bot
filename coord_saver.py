@@ -10,7 +10,6 @@ mem = Pymem('Trickster.bin')
 module = module_from_name(mem.process_handle, 'Trickster.bin').lpBaseOfDll
 offsetsx = [0x3B8, 0xF8, 0x258,0x678]
 offsetsy = [0x3F0, 0x470, 0x1EC, 0x110, 0x67C]
-offsetsmana = [0x78, 0x6E4, 0x1B4, 0xB8, 0x1DC]
 
 
 while True:  # making a loop
