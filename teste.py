@@ -7,10 +7,10 @@ from memory_manage import getPointerAddr
 from pymem import *
 from pymem.process import *
 from main import *
-mem = Pymem('Trickster.bin')
-module = module_from_name(mem.process_handle, 'Trickster.bin').lpBaseOfDll
-columns = ['X','Y']
-positions = []
+# mem = Pymem('Trickster.bin')
+# module = module_from_name(mem.process_handle, 'Trickster.bin').lpBaseOfDll
+# columns = ['X','Y']
+# positions = []
 
 # offsetsmana = [0x78, 0x6E4, 0x1B4, 0xB8, 0x1DC]
 # CMana = mem.read_int(getPointerAddr(mem,module + 0x009B7484, offsetsmana))
@@ -32,4 +32,5 @@ def verify_buffs(buffs_index:int):
             keyboard.release('1')
             time.sleep(0.2)
 time.sleep(2)
-verify_buffs(2)
+buff_pos = sell_items()
+print(buff_pos)
