@@ -1,0 +1,10 @@
+keyboard==0.13.5
+numpy==1.24.1
+opencv_python==4.7.0.68
+pandas==1.5.3
+PyAutoGUI==0.9.53
+PyGetWindow==0.0.9
+Pymem==1.10.0
+pynput==1.7.6
+pywin32==305
+win32gui==221.6
