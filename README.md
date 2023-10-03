@@ -3,7 +3,9 @@
 
 An bot oriented to automate the gameplay of Trickster Online
 
-Status: Almost working, but requires manual code editing
+Status: Discontinued, but it should work or at least help you understand the mechanics of a game bot.
+
+Code quality: poor
 
 
 
